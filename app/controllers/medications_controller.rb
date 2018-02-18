@@ -17,7 +17,7 @@ class MedicationsController < ApplicationController
     if medication.save
       render json: {message: 'Medication created successfully'}, status: :created
     else 
-      render json: {errors: user.errors.full_messages}, status: :bad_request
+      render json: {errors: medication.errors.full_messages}, status: :bad_request
     end
   end 
 
