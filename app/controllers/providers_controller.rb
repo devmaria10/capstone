@@ -13,6 +13,7 @@ class ProvidersController < ApplicationController
   def create
     provider = Provider.new(
                     name: params[:name],
+                    address: params[:address]
     )
     if provider.save
       render json: {message: 'Provider created successfully'}, status: :created

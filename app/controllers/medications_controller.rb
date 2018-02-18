@@ -5,7 +5,7 @@ class MedicationsController < ApplicationController
     search_term = params[:search]
     if search_term
       @medications = medications.where("name iLIKE ?", "%#{search_term}%")
-    end 
+    end
 
     render 'index.json.jbuilder'
   end 

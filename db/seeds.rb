@@ -7,3 +7,12 @@ User.create(first_name: "Maria", last_name: "Escobar", dob: "09/10/1980", street
 Medication.create(name: "Gleevec(imatinib)")
 
 Provider.create(name: "Alan Kim, MD", address: "555 Michigan Avenue, Chicago, Illinois 60611")
+
+Diagnosis.create(name: "Multiple myeloma not having achieved remission", icd_10_code: "C90.00")
+
+UserMedication.create()
+
+UserProvider.create()
+
+Timer.create()
+#UserMedication.create(user_id: 1, provider_id: 1)
