@@ -10,9 +10,8 @@ Provider.create(name: "Alan Kim, MD", address: "555 Michigan Avenue, Chicago, Il
 
 Diagnosis.create(name: "Multiple myeloma not having achieved remission", icd_10_code: "C90.00")
 
-UserMedication.create()
+UserMedication.create(diagnosis_id: 1, medication_id: 1, user_id: 1, dosage: "400 mg PO qDay", doctor_id: 1)
 
-UserProvider.create()
+UserProvider.create(user_id: 1, provider_id: 1)
 
 Timer.create()
-#UserMedication.create(user_id: 1, provider_id: 1)
