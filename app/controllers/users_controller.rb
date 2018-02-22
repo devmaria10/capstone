@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     if search_term
       @users = users.where("first_name iLIKE ? OR last_name iLIKE ?", "%#{search_term}%", "%#{search_term}%")
     end
+
+    p @users
     
     render 'index.json.jbuilder'
   end 
@@ -19,7 +21,10 @@ class UsersController < ApplicationController
                     city: params[:city],
                     state: params[:state],
                     zip: params[:zip],
-                    phone_number: params[:phone_number] 
+                    phone_number: params[:phone_number],
+                    email: params[:email]
+                    password: params[:password],
+                    passworddigest: params[:passworddigest]
     )
     if user.save
       render json: {message: 'User created successfully'}, status: :created
@@ -45,6 +50,8 @@ class UsersController < ApplicationController
     @user.zip = params[:zip] || user.zip
     @user.phone_number = params[:phone_number] || user.phone_number
     @user.email = params[:email] || user.email
+    @user.password = params[:password] || user.password
+    @user.passworddigest = params[:passworddigest] || user.passworddigest
 
     
     if @user.save

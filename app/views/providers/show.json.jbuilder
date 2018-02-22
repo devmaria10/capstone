@@ -1,2 +1,2 @@
-json.name provider.name
-json.address provider.address
+json.name @provider.name
+json.address @provider.address

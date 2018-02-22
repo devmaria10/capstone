@@ -1,1 +1,1 @@
-json.name medication.name
+json.name @medication.name
