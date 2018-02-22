@@ -42,7 +42,7 @@ class ProvidersController < ApplicationController
 
   def destroy
     @provider = Provider.find(params[:id])
-    provider.destroy
+    @provider.destroy
     render json: {message: "Successfully destroyed provider ##{provider.id}"}
   end 
 end

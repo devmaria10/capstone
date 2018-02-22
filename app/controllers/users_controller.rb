@@ -55,8 +55,8 @@ class UsersController < ApplicationController
   end 
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
+    @user = User.find(params[:id])
+    @user.destroy
     render json: {message: "Successfully destroyed user ##{user.id}"}
   end 
 end

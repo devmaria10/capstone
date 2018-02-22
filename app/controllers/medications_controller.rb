@@ -40,7 +40,7 @@ class MedicationsController < ApplicationController
 
   def destroy
     @medication = Medication.find(params[:id])
-    medication.destroy
+    @medication.destroy
     render json: {message: "Successfully destroyed medication ##{medication.id}"}
   end 
 end

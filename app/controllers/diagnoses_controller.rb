@@ -42,7 +42,7 @@ class DiagnosesController < ApplicationController
 
   def destroy
     @diagnosis = Diagnosis.find(params[:id])
-    diagnosis.destroy
+    @diagnosis.destroy
     render json: {message: "Successfully destroyed diagnosis ##{diagnosis.id}"}
   end
 end
