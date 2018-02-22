@@ -8,5 +8,3 @@ json.state @user.state
 json.zip @user.zip 
 json.phone_number @user.phone_number 
 json.email @user.email
-json.password @user.password
-json.passworddigest @user.passworddigest
