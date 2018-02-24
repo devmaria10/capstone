@@ -20,7 +20,9 @@ class UsersController < ApplicationController
                     state: params[:state],
                     zip: params[:zip],
                     phone_number: params[:phone_number],
-                    email: params[:email]
+                    email: params[:email], 
+                    password: params[:password],
+                    passwordconfirmation: params[:passwordconfirmation]
     )
     if user.save
       render json: {message: 'User created successfully'}, status: :created
