@@ -1,24 +1,19 @@
 class TimersController < ApplicationController
   def index
     @timers = Timer.all
-
-    search_term = params[:search]
-    if search_term
-      @timers = timers.where(" iLIKE ? OR  iLIKE ?", "%#{search_term}%", "%#{search_term}%")
-    end
     
     render 'index.json.jbuilder'
   end 
 
   def create
-    user = Timer.new(
+    timer = Timer.new(
                     last_rang: params[:last_rang],
                     increment: params[:increment],
                     timerable_id: params[:timerable_id],
                     timerable_type: params[:timerable_type],               
     )
     if timer.save
-      render json: {message: 'Timer created successfully'}, status: :created
+      render json: {message: 'Reminder created successfully'}, status: :created
     else 
       render json: {errors: timer.errors.full_messages}, status: :bad_request
     end
@@ -45,8 +40,8 @@ class TimersController < ApplicationController
   end 
 
   def destroy
-    timer = Timer.find(params[:id])
-    timer.destroy
+    @timer = Timer.find(params[:id])
+    @timer.destroy
     render json: {message: "Successfully destroyed timer ##{timer.id}"}
   end 
 end
