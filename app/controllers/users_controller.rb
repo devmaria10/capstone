@@ -22,7 +22,7 @@ class UsersController < ApplicationController
                     phone_number: params[:phone_number],
                     email: params[:email], 
                     password: params[:password],
-                    passwordconfirmation: params[:passwordconfirmation]
+                    password_confirmation: params[:password_confirmation]
     )
     if user.save
       render json: {message: 'User created successfully'}, status: :created
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
     render 'show.json.jbuilder'
   end 
 
@@ -61,4 +62,10 @@ class UsersController < ApplicationController
     @user.destroy
     render json: {message: "Successfully destroyed user ##{user.id}"}
   end 
+
+  def view_profile
+    @user = current_user
+    render 'show.json.jbuilder'
+    
+  end
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'user_token' => 'user_token#create'
+  get '/view_profile' => 'users#view_profile'
   get '/users' => 'users#index'
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show'

@@ -8,3 +8,7 @@ json.state @user.state
 json.zip @user.zip 
 json.phone_number @user.phone_number 
 json.email @user.email
+
+json.diagnosis @user.diagnosis
+json.providers @user.providers
+json.medications @user.medications
