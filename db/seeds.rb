@@ -21,4 +21,5 @@
 # UserProvider.create(user_id: 1, provider_id: 1)
 # UserProvider.create(user_id: 2, provider_id: 2)
 
-Timer.create()
+Timer.create(last_rang: time.now, increment: , timerable_id: 1 , timerable_type: Provider)
+Timer.create(last_rang: time.now, increment: , timerable_id: 2, timerable_type: Medication)
