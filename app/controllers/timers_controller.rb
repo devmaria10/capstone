@@ -8,7 +8,7 @@ class TimersController < ApplicationController
   def create
     timer = Timer.new(
                     last_rang: params[:last_rang],
-                    increment: params[:increment],
+                    time_increment: params[:time_increment],
                     increment_unit: params[:increment_unit],
                     timerable_id: params[:timerable_id],
                     timerable_type: params[:timerable_type],               
@@ -29,7 +29,7 @@ class TimersController < ApplicationController
     @timer = Timer.find(params[:id])
     
     @timer.last_rang = params[:last_rang] || timer.last_rang
-    @timer.increment = params[:increment] || timer.increment
+    @timer.increment = params[:time_increment] || timer.time_increment
     @timer.increment_unit = params[:increment_unit] || timer.increment_unit
     @timer.timerable_id = params[:timerable_id] || timer.timerable_id
     @timer.timerable_type = params[:timerable_type] || timer.timerable_type
@@ -51,5 +51,5 @@ class TimersController < ApplicationController
     this.last_rang = last_rang + eval("#{increment}.#{increment_unit}")
     render json: {message: "Reminder succesfully created"}
 #     #activejob set reminder using last_rang
-# end 
+  end
 end

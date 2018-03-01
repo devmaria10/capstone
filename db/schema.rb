@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228234302) do
+ActiveRecord::Schema.define(version: 20180301011540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180228234302) do
   end
 
   create_table "timers", force: :cascade do |t|
-    t.integer "increment"
+    t.integer "time_increment"
     t.integer "timerable_id"
     t.string "timerable_type"
     t.datetime "created_at", null: false
