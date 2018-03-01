@@ -21,5 +21,18 @@
 # UserProvider.create(user_id: 1, provider_id: 1)
 # UserProvider.create(user_id: 2, provider_id: 2)
 
-Timer.create(last_rang: time.now, increment: , timerable_id: 1 , timerable_type: Provider)
-Timer.create(last_rang: time.now, increment: , timerable_id: 2, timerable_type: Medication)
+Timer.create(last_rang: time.now, increment: 1, increment_unit: "week", timerable_id: 1 , timerable_type: "Provider")
+Timer.create(last_rang: time.now, increment: 1, increment_unit: "day", timerable_id: 2, timerable_type: "UserMedication")
+
+# Examples of Timer 
+
+# class Timer
+#   def set_new_reminder
+#     this.last_rang = last_rang + eval("#{increment}.#{increment_unit}")
+#     #activejob set reminder using last_rang
+#   end
+# end
+
+
+# timer = Timer.find(1)
+# timer.set_new_reminder
