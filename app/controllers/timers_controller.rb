@@ -52,4 +52,15 @@ class TimersController < ApplicationController
     render json: {message: "Reminder succesfully created"}
 #     #activejob set reminder using last_rang
   end
+
+  def call
+    client = Twilio::REST::Client.new
+    client.messages.create({
+      from: Rails.application.secrets.twilio_phone_number,
+      to: '17739312525',
+      body: "Time to take your meds!"
+    })
+    render json: {message: "Time to take your meds!"}
+  end
+
 end

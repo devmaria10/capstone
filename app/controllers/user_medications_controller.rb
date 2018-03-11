@@ -19,6 +19,8 @@ class UserMedicationsController < ApplicationController
                     doctor_id: params[:doctor_id],
 
     )
+
+    Timer.new()
     if usermedication.save
       render json: {message: 'UserMedication created successfully'}, status: :created
     else 

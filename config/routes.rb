@@ -37,9 +37,11 @@ Rails.application.routes.draw do
   patch 'userproviders/:id' => 'userproviders#update'
   delete '/userproviders/:id' => 'userproviders#destroy'
 
+  get '/timers/call' => 'timers#call'
   get '/timers' => 'timers#index'
   post '/timers' => 'timers#create'
   get '/timers/:id' => 'timers#show'
   patch '/timers/:id' => 'timers#update'
   delete '/timers/:id' => 'timers#destroy'
+
 end
