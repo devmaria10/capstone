@@ -540,22 +540,6 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
             <p>Designing apps to improve the patient experience</p>
           </div>
           
-          <div class="col-md-4">
-            <h4 class="text-uppercase text-white">
-              Newsletter
-            </h4>
-            <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
-            <!--@todo: replace with mailchimp code-->
-            <form>
-              <div class="input-group">
-                <label class="sr-only" for="email-field">Email</label>
-                <input type="text" class="form-control" id="email-field" placeholder="Email">
-                <span class="input-group-append">
-                  <button class="btn btn-primary" type="button">Go!</button>
-                </span>
-              </div>
-            </form>
-          </div>
         </div>
         
       </div>
@@ -565,7 +549,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <p class="mb-0">Site template by <a href="appstraptheme.com" class="footer-link">MyCancerCoach</a> | Copyright 2018 &copy; MyCancerCoach</p>
+              <p class="mb-0">Site template by <a href="appstraptheme.com" class="footer-link">MyCancerCoach</a> | 2018 &copy; MyCancerCoach</p>
             </div>
             <div class="col-md-6">
               <ul class="list-inline footer-links float-md-right mb-0">
@@ -587,9 +571,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
         Theme Colours
       </h5>
       <hr />
-      <div class="theme-colours"> <a href="#green" class="green active" data-toggle="tooltip" data-placement="right" data-original-title="Green (Default)">Green</a> <a href="#red" class="red" data-toggle="tooltip" data-placement="right" data-original-title="Red">Red</a> <a href="#blue" class="blue" data-toggle="tooltip" data-placement="right" data-original-title="Blue">Blue</a> <a href="#purple" class="purple" data-toggle="tooltip" data-placement="right" data-original-title="Purple">Purple</a> <a href="#pink" class="pink" data-toggle="tooltip" data-placement="right" data-original-title="Pink">Pink</a> <a href="#orange" class="orange" data-toggle="tooltip" data-placement="right" data-original-title="Orange">Orange</a> <a href="#lime" class="lime" data-toggle="tooltip" data-placement="right" data-original-title="Lime">Lime</a> <a href="#blue-dark" class="blue-dark" data-toggle="tooltip" data-placement="right" data-original-title="Blue-dark">Blue-dark</a> <a href="#red-dark" class="red-dark" data-toggle="tooltip" data-placement="right" data-original-title="Red-dark">Red-dark</a> <a href="#brown" class="brown" data-toggle="tooltip" data-placement="right" data-original-title="Brown">Brown</a> <a href="#cyan-dark" class="cyan-dark" data-toggle="tooltip" data-placement="right" data-original-title="Cyan-dark">Cyan-dark</a> <a href="#yellow" class="yellow" data-toggle="tooltip" data-placement="right" data-original-title="Yellow">Yellow</a> <a href="#slate" class="slate" data-toggle="tooltip" data-placement="right" data-original-title="Slate">Slate</a> <a href="#olive" class="olive" data-toggle="tooltip" data-placement="right" data-original-title="Olive">Olive</a> <a href="#teal" class="teal" data-toggle="tooltip" data-placement="right" data-original-title="Teal">Teal</a> <a href="#green-bright" class="green-bright" data-toggle="tooltip" data-placement="right" data-original-title="Green-bright">Green-bright</a> </div>
-      <hr />
-      <p class="text-xs text-muted">Cookies are NOT enabled so colour selection is not persistent.</p>
+      <div class="theme-colours"> <a href="#blue" class="blue" data-toggle="tooltip" data-placement="right" data-original-title="Blue">Blue</a></div>
       <p class="text-xs my-0"><a href="index.html">Back to main homepage</a></p>
       <p class="text-xs my-0"><a href="intro.html">Back to intro page</a></p>
     </div>
@@ -631,7 +613,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
                   <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
                 </div>
                 <div class="form-group">
-                  <label class="sr-only" for="signup-username">Userame</label>
+                  <label class="sr-only" for="signup-username">User Name</label>
                   <input type="text" class="form-control" id="signup-username" placeholder="Username">
                 </div>
                 <div class="form-group">
@@ -808,4 +790,40 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
     </div>
     
   </div>
+
+  <template id="create-reminder-page">
+  <div class="vue-component">
+
+    <div class="container">
+      <h1>Create a Reminder</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-login form-wrapper form-medium">
+        <div class="form-group">
+          <label>Time Last Rang</label> 
+          <input type="text" class="form-control" v-model="last_rang">
+        </div>
+        <div class="form-group">
+          <label>Time Increment</label> 
+          <input type="text" class="form-control" v-model="time_increment">
+        </div>
+        <div class="form-group">
+          <label>Increment Unit</label> 
+          <input type="text" class="form-control" v-model="increment_unit">
+        </div>
+        <div class="form-group">
+          <label>Timerable ID</label> 
+          <input type="text" class="form-control" v-model="timerable_id">
+        </div>
+        <div class="form-group">
+          <label>Timerable Type (Provider or UserMedication)</label> 
+          <input type="text" class="form-control" v-model="timerable_type">
+        </div>
+        <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</template>
 </template>

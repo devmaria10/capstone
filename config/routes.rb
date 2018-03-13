@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   delete '/userproviders/:id' => 'userproviders#destroy'
 
   get '/timers/call' => 'timers#call'
+
   get '/timers' => 'timers#index'
   post '/timers' => 'timers#create'
   get '/timers/:id' => 'timers#show'

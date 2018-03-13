@@ -7,17 +7,20 @@ class TimersController < ApplicationController
 
   def create
     timer = Timer.new(
-                    last_rang: params[:last_rang],
+                    last_rang: Time.now,
                     time_increment: params[:time_increment],
                     increment_unit: params[:increment_unit],
                     timerable_id: params[:timerable_id],
                     timerable_type: params[:timerable_type],               
     )
     if timer.save
+      ReminderJob.set(wait: 1.minute).perform_later(timer)
       render json: {message: 'Reminder created successfully'}, status: :created
     else 
       render json: {errors: timer.errors.full_messages}, status: :bad_request
     end
+
+
   end 
 
   def show
@@ -35,6 +38,7 @@ class TimersController < ApplicationController
     @timer.timerable_type = params[:timerable_type] || timer.timerable_type
 
     if @timer.save
+      ReminderJob.set(wait: 1.minute).perform_later(timer)
       render 'show.json.jbuilder'
     else
       render json: {errors: timer.errors.full_messages}, status: :unprocessable_entity
@@ -46,21 +50,5 @@ class TimersController < ApplicationController
     @timer.destroy
     render json: {message: "Successfully destroyed timer ##{timer.id}"}
   end 
-
-  def set_new_reminder
-    this.last_rang = last_rang + eval("#{increment}.#{increment_unit}")
-    render json: {message: "Reminder succesfully created"}
-#     #activejob set reminder using last_rang
-  end
-
-  def call
-    client = Twilio::REST::Client.new
-    client.messages.create({
-      from: Rails.application.secrets.twilio_phone_number,
-      to: '17739312525',
-      body: "Time to take your meds!"
-    })
-    render json: {message: "Time to take your meds!"}
-  end
 
 end
