@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get '/timers/call' => 'timers#call'
 
   get '/timers' => 'timers#index'
-  post '/timers' => 'timers#create'
+  post '/timers/:user_id' => 'timers#create'
   get '/timers/:id' => 'timers#show'
   patch '/timers/:id' => 'timers#update'
   delete '/timers/:id' => 'timers#destroy'

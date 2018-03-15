@@ -4,23 +4,23 @@ class TimersController < ApplicationController
     
     render 'index.json.jbuilder'
   end 
-
+# route: /users/:id/timers. retrieve user id with params[:user_id]
   def create
     timer = Timer.new(
                     last_rang: Time.now,
-                    time_increment: params[:time_increment],
+                    time_increment: params[:time_increment].to_i,
                     increment_unit: params[:increment_unit],
-                    timerable_id: params[:timerable_id],
-                    timerable_type: params[:timerable_type],               
+                    timerable_id: params[:timerable_id].to_i,
+                    timerable_type: params[:timerable_type]              
     )
+    user = User.find params[:user_id]
+
     if timer.save
-      ReminderJob.set(wait: 1.minute).perform_later(timer)
+      ReminderJob.set(wait: 1.minute).perform_later(timer, user.phone_number)
       render json: {message: 'Reminder created successfully'}, status: :created
     else 
       render json: {errors: timer.errors.full_messages}, status: :bad_request
     end
-
-
   end 
 
   def show

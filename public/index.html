@@ -124,6 +124,7 @@
             <nav class="nav nav-sm header-block-flex">
               <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>
               <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/signup">Sign Up</a> <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/login">Login</a> 
+              <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/timers">New Reminder</a>
             </nav>
             <div class="header-divider header-divider-sm"></div>
             <!--language menu-->
@@ -790,6 +791,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
     </div>
     
   </div>
+  </template>
 
   <template id="create-reminder-page">
   <div class="vue-component">
@@ -817,7 +819,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
           <input type="text" class="form-control" v-model="timerable_id">
         </div>
         <div class="form-group">
-          <label>Timerable Type (Provider or UserMedication)</label> 
+          <label>Type (Provider or UserMedication)</label>
           <input type="text" class="form-control" v-model="timerable_type">
         </div>
         <button class="btn btn-primary" v-on:click="submit()">Submit</button>
@@ -826,4 +828,23 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
 
   </div>
 </template>
+
+<template id="view-profile-page">
+  <div class="vue-component">
+    <div class="container">
+      <h1>{{ user.id }}</h1>
+      <h4>Prep Time: {{ recipe.formatted.prep_time }}</h4>
+      <h3>Ingredients</h3>
+      <ul>
+        <li v-for="ingredient in recipe.formatted.ingredients">{{ ingredient }}</li>
+      </ul>
+      <h3>Directions</h3>
+      <ol>
+        <li v-for="direction in recipe.formatted.directions">{{ direction }}</li>
+      </ol>
+      <img v-bind:src="recipe.image_url" alt="">
+      <a class="btn btn-warning" v-bind:href="'/#/recipes/' + recipe.id + '/edit'">Edit</a>
+      <a class="btn btn-danger" v-bind:href="'/#/recipes/' + recipe.id + '/delete'">Delete</a>
+    </div>
+  </div>
 </template>

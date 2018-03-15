@@ -6,6 +6,8 @@
 
 # User.create(first_name: "Dan", last_name: "Chu", dob: "12/3/1990", street_address: "2345 Lakeshore Drive", city: "Chicago", state: "Illinois", zip: 60611, phone_number: "312-555-1234", email: "dan@email.com", password: "password", password_confirmation: "password")
 
+User.create(first_name: "Idriys", last_name: "Lowe", dob: "08/17/1985", street_address: "4444 Main Street", city: "Fargo", state: "North Dakota", zip: "55443", phone_number: "773-934-8218", email: "idriys@email.com", password: "password", password_confirmation: "password")
+
 # Medication.create(name: "Gleevec (imatinib)")
 # Medication.create(name: "Xeloda (capecitabine)")
 
@@ -21,8 +23,8 @@
 # UserProvider.create(user_id: 1, provider_id: 1)
 # UserProvider.create(user_id: 2, provider_id: 2)
 
-Timer.create!(last_rang: Time.now, time_increment: 1, increment_unit: "week", timerable_id: 1 , timerable_type: "Provider")
-Timer.create!(last_rang: Time.now, time_increment: 1, increment_unit: "day", timerable_id: 2, timerable_type: "UserMedication")
+# Timer.create!(last_rang: Time.now, time_increment: 1, increment_unit: "week", timerable_id: 1 , timerable_type: "Provider")
+# Timer.create!(last_rang: Time.now, time_increment: 1, increment_unit: "day", timerable_id: 2, timerable_type: "UserMedication")
 
 # Examples of Timer 
 
