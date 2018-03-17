@@ -4,7 +4,7 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Welcome to MyCancerCoach!"
+      message: []
     };
   },
   created: function() {},
@@ -16,30 +16,33 @@ var SignupPage = {
   template: "#signup-page",
   data: function() {
     return {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       dob: "",
-      street_address: "",
+      streetAddress: "",
       city: "",
       state: "",
       zip: "",
-      phone_number: "",
+      phoneNumber: "",
       email: "",
       password: "",
       passwordConfirmation: "",
       errors: []
     };
   },
+  created: function(){
+    console.log(this.firstName);
+  },
   methods: {
     submit: function() {
       var params = {
-        first_name: this.first_name,
-        last_name: this.last_name,
+        first_name: this.firstName,
+        last_name: this.lastName,
         dob: this.dob,
-        street_address: this.street_address,
+        street_address: this.streetAddress,
         city: this.city,
         zip: this.zip,
-        phone_number: this.phone_number,
+        phone_number: this.phoneNumber,
         email: this.email,
         password: this.password,
         password_confirmation: this.passwordConfirmation
@@ -91,11 +94,29 @@ var LoginPage = {
   }
 };
 
-var LogoutPage = {
+var ViewProfilePage = {
+  template: "#view-profile-page",
+  data: function() {
+    return {
+      user: {
+        id: "",
+        first_name: "",
+        last_name: "",
+        dob: "",
+        street_address: "",
+        city: "",
+        state: "",
+        zip: "",
+        phone_number: "",
+        email: ""       
+      }
+    }
+  },
   created: function() {
-    axios.defaults.headers.common["Authorization"] = undefined;
-    localStorage.removeItem("jwt");
-    router.push("/");
+    axios.get("/users/" + this.$route.params.id )
+      .then(function(response) {
+        this.user = response.data;
+      }.bind(this));
   }
 };
 
@@ -134,41 +155,21 @@ var CreateReminderPage = {
   }
 };
 
-var ViewProfilePage = {
-  template: "#view-profile-page",
-  data: function() {
-    return {
-      user: {
-        id: "",
-        first_name: "",
-        last_name: "",
-        dob: "",
-        street_address: "",
-        city: "",
-        state: "",
-        zip: "",
-        phone_number: "",
-        email: ""       
-        }
-      }
-    }
-  },
+var LogoutPage = {
   created: function() {
-    axios.get("/users/" + this.$route.params.id )
-      .then(function(response) {
-        this.user = response.data;
-      }.bind(this));
+    axios.defaults.headers.common["Authorization"] = undefined;
+    localStorage.removeItem("jwt");
+    router.push("/");
   }
 };
-
 
 var router = new VueRouter({
   routes: [{ path: "/", component: HomePage },
     { path: "/signup", component: SignupPage },
     { path: "/login", component: LoginPage },
-    { path: "/logout", component: LogoutPage },
-    { path: "/timers", component: CreateReminderPage },
-    { path: "/users", component: ViewProfilePage }
+    { path: "/users", component: ViewProfilePage },
+    { path: "/timers", component: CreateReminderPage }
+    // { path: "/logout", component: LogoutPage }    
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

@@ -110,22 +110,14 @@
             <div class="header-block-flex order-1 mr-auto">
               <nav class="nav nav-sm header-block-flex">
                 <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>
-
                 <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/signup">Sign Up</a> 
-
-                <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/login">Login</a> 
-
+                <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/login">Login</a> <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/timers">New Reminder</a>
                 <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/viewprofile">View Profile</a>
-
-                <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/timers">Set Up A Reminder</a>
-                
               </nav>
-              <div class="header-divider header-divider-sm">
-                
-              </div>
+              <div class="header-divider header-divider-sm"></div>
         
-            </div>
           </div>
+        </div>
         <div data-toggle="sticky">
           
           <!--Header search region - hidden by default -->
@@ -356,15 +348,12 @@
           </div>
         </div>
       </div>
-    </div>
 
 
       
       <router-view></router-view>
 
-   
-
-  <!-- ======== @Region: #footer ======== -->
+      <!-- ======== @Region: #footer ======== -->
       <footer id="footer" class="p-0">
         <div class="container pt-6 pb-5">
           <div class="row">
@@ -422,7 +411,112 @@
         </div>
       </footer>
 
-  </div>
+
+      <div>
+        <!--@modal - signup modal-->
+        <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  Sign Up
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <form action="signup.html">
+                  <div class="form-group">
+                    <h5>
+                      Price Plan
+                    </h5>
+                    <select class="form-control">
+                      <option>Basic</option>
+                      <option>Pro</option>
+                      <option>Pro +</option>
+                    </select>
+                  </div>
+                  <hr />
+                  
+                  <h5>
+                    Account Information
+                  </h5>
+                  <div class="form-group">
+                    <label class="sr-only" for="signup-first-name">First Name</label>
+                    <input type="text" class="form-control" id="signup-first-name" placeholder="First name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="signup-last-name">Last Name</label>
+                    <input type="text" class="form-control" id="signup-last-name" placeholder="Last name">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="signup-username">User Name</label>
+                    <input type="text" class="form-control" id="signup-username" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="signup-email">Email address</label>
+                    <input type="email" class="form-control" id="signup-email" placeholder="Email address">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="signup-password">Password</label>
+                    <input type="password" class="form-control" id="signup-password" placeholder="Password">
+                  </div>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" value="term" class="form-check-input">
+                      I agree with the Terms and Conditions. 
+                    </label>
+                  </div>
+                  <hr />
+                  <button class="btn btn-primary" type="submit">Sign up</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <small>Already signed up? <a href="login.html">Login here</a>.</small>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        
+        <!--@modal - login modal-->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">
+                  Login
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <form action="login.html">
+                  <div class="form-group">
+                    <label class="sr-only" for="login-email">Email</label>
+                    <input type="email" id="login-email" class="form-control email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control password" placeholder="Password">
+                  </div>
+                  <button type="button" class="btn btn-primary">Login</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <small>Not a member? <a href="#" class="signup">Sign up now!</a></small>
+                <br />
+                <small><a href="#">Forgotten password?</a></small>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+      </div>
+
+    </div>
 
   
 
@@ -461,124 +555,17 @@
 <template id="signup-page">
   <div class="vue-component">
 
-
-
-    <!--@modal - signup modal-->
-    <div class="container"
-    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">
-              Sign Up
-            </h4>
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          </div>
-          <div class="modal-body">
-            <form action="signup.html">
-              <div class="form-group">
-                <h5>
-                  Price Plan
-                </h5>
-                <select class="form-control">
-                  <option>Basic</option>
-                  <option>Pro</option>
-                  <option>Pro +</option>
-                </select>
-              </div>
-              <hr />
-              
-              <h5>
-                Account Information
-              </h5>
-              <div class="form-group">
-                <label class="sr-only" for="signup-first-name">First Name</label>
-                <input type="text" 
-                v-model="firstName"
-               class="form-control" id="signup-first-name" placeholder="first name">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-last-name">Last Name</label>
-                <input type="text" 
-                v-model="lastName"
-                class="form-control" id="signup-last-name" placeholder="last name">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-dob">Date of Birth</label>
-                <input type="text" 
-                v-model="dob"
-                class="form-control" id="signup-dob" placeholder="date of birth">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-streetAddress">Street Address</label>
-                <input type="text" 
-                v-model="streetAddress"
-                class="form-control" id="signup-streetAddress" placeholder="street address">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-city">City</label>
-                <input type="text" 
-                v-model="city"
-                class="form-control" id="signup-city" placeholder="city">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-state">State</label>
-                <input type="text" 
-                v-model="state"
-                class="form-control" id="signup-state" placeholder="state">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-zip">Zip</label>
-                <input type="text" 
-                v-model="zip"
-                class="form-control" id="signup-zip" placeholder="zip">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-phoneNumber">Phone Number</label>
-                <input type="text" 
-                v-model="phoneNumber"
-                class="form-control" id="signup-phoneNumber" placeholder="phone number">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-email">Email address</label>
-                <input type="email" class="form-control" id="signup-email" placeholder="email address">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-password">password</label>
-                <input type="password" class="form-control" id="signup-password" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="signup-passwordConfirmation">retype your password</label>
-                <input type="password" class="form-control" id="signup-passwordConfirmation" placeholder="password confirmation">
-              </div>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" value="term" class="form-check-input">
-                  I agree with the Terms and Conditions. 
-                </label>
-              </div>
-              <hr />
-              <button class="btn btn-primary" type="submit">Sign up</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <small>Already signed up? <a href="login.html">Login here</a>.</small>
-          </div>
-        </div>
-       
-      </div>
-    
-    </div>
-
-
-    <!-- <div class="container">
+    <!-- <div class="container"> -->
       <h1>Signup</h1>
-     
-      <div class="form-group">
+      {{firstName}}
+      <!-- <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul> -->
+      <!-- <div class="form-group">
         <label>First Name:</label> 
         <input type="text" class="form-control" v-model="firstName">
-      </div>
-      <div class="form-group">
+      </div> -->
+      <!-- <div class="form-group">
         <label>Last Name:</label>
         <input type="text" class="form-control" v-model="lastName">
       </div>
@@ -621,72 +608,11 @@
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
- -->
+    </div> -->
+
   </div>
 
 </template>
-
-<template id="login-page">
-  <div class="vue-component">
-
-    <div class="container">
-      <h1>Login</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Email Address:</label>
-        <input type="text" class="form-control" v-model="text">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
-
-  </div>
-</template id="view-profile-page">
-
-
-<template id="create-reminder-page">
-  <div class="vue=component">
-
-    <div class="container">
-      <h1>Set Up a Reminder</h1>
-     
-      <div class="form-group">
-        <label>Last Rang:</label> 
-        <input type="text" class="form-control" v-model="lastRang">
-      </div>
-      <div class="form-group">
-        <label>Time Increment:</label>
-        <input type="integer" class="form-control" v-model="timeIncrement">
-      </div>
-
-      <div class="form-group">
-        <label>Minutes, Days, Weeks?</label>
-        <input type="text" class="form-control" v-model="incrementUnit">
-      </div>
-
-      <div class="form-group">
-        <label>ID:</label>
-        <input type="text" class="form-control" v-model="timerableId">
-      </div>
-
-      <div class="form-group">
-        <label>Medication or Provider?</label>
-        <input type="text" class="form-control" v-model="timerableType">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-      
-    </div>
-    
-  </div>
-  
-</template>
-
 
 
 
