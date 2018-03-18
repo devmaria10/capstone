@@ -16,7 +16,9 @@ class TimersController < ApplicationController
     user = User.find params[:user_id]
 
     if timer.save
-      ReminderJob.set(wait: 1.minute).perform_later(timer, user.phone_number)
+
+      ReminderJob.set(wait: eval("#{timer.time_increment}.#{timer.increment_unit}")).perform_later(timer, user.phone_number, timer.timerable.name)
+
       render json: {message: 'Reminder created successfully'}, status: :created
     else 
       render json: {errors: timer.errors.full_messages}, status: :bad_request

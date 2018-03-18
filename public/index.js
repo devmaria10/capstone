@@ -135,14 +135,13 @@ var CreateReminderPage = {
   methods: {
     submit: function() {
       var params = {
-        last_rang: this.last_rang,
         time_increment: this.time_increment,
         increment_unit: this.increment_unit,
         timerable_id: this.timerable_id,
         timerable_type: this.timerable_type
       };
       axios
-        .post("/timers", params)
+        .post("/timers/" + 1, params)
         .then(function(response) {
           router.push("/timers");
         })
