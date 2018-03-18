@@ -30,7 +30,7 @@ var SignupPage = {
       errors: []
     };
   },
-  created: function(){
+  created: function() {
     console.log(this.firstName);
   },
   methods: {

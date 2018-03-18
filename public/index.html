@@ -111,13 +111,13 @@
               <nav class="nav nav-sm header-block-flex">
                 <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>
 
-                <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/signup">Sign Up</a> 
+                <a class="nav-link text-xs text-uppercase d-none d-md-block" data-toggle="modal" data-target="#signup-modal" href="/#/signup">Sign Up</a> 
 
                 <a class="nav-link text-xs text-uppercase d-none d-md-block" data-toggle="modal" data-target="#login-modal" href="/#/login">Login</a> 
 
                 <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/viewprofile">View Profile</a>
 
-                <a class="nav-link text-xs text-uppercase d-none d-md-block" href="/#/timers">Set Up A Reminder</a>
+                <a class="nav-link text-xs text-uppercase d-none d-md-block" data-toggle="modal" data-target="#create-reminder-modal" href="/#/timers">Set Up A Reminder</a>
                 
               </nav>
               <div class="header-divider header-divider-sm">
@@ -205,21 +205,7 @@
                           <!-- Dropdown Menu -->
                           <div class="dropdown-menu" role="menu" aria-labelledby="about-drop"> <a href="about.html" class="dropdown-item">About Us Basic</a> <a href="about-extended.html" class="dropdown-item">About Us Extended</a> <a href="about-me.html" class="dropdown-item">About Me</a> <a href="team.html" class="dropdown-item">Team List</a> <a href="team-grid.html" class="dropdown-item">Team Grid</a> <a href="team-member.html" class="dropdown-item">Team Member</a> <a href="contact.html" class="dropdown-item">Contact</a> <a href="contact.php" class="dropdown-item">Contact (PHP)</a> </div>
                         </div>
-                        <div class="dropdown dropdown-submenu">
-                          <a href="blog.html" class="dropdown-item dropdown-toggle" id="blog-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Blog</a> 
-                          <!-- Dropdown Menu -->
-                          <div class="dropdown-menu"> <a href="blog.html" class="dropdown-item">Blog List Right Sidebar</a> <a href="blog-leftbar.html" class="dropdown-item">Blog List Left Sidebar</a> <a href="blog-timeline.html" class="dropdown-item">Blog List Timeline</a> <a href="blog-grid.html" class="dropdown-item">Blog List Grid</a> <a href="blog-post.html" class="dropdown-item">Blog Post</a> <a href="blog-post-video.html" class="dropdown-item">Blog Post With Video</a> <a href="blog-post-slideshow.html" class="dropdown-item">Blog Post With Slideshow</a> <a href="blog-post-audio.html" class="dropdown-item">Blog Post With Audio Clip</a> </div>
-                        </div>
-                        <div class="dropdown dropdown-submenu">
-                          <a href="pricing.html" class="dropdown-item dropdown-toggle" id="pricing-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Pricing</a> 
-                          <!-- pricing pages -->
-                          <div class="dropdown-menu"> <a href="pricing.html" class="dropdown-item">Pricing Plans</a> <a href="pricing-tables.html" class="dropdown-item">Comparison Tables</a> </div>
-                        </div>
-                        <div class="dropdown dropdown-submenu">
-                          <a href="timeline.html" class="dropdown-item dropdown-toggle" id="timeline-drop" data-toggle="dropdown" data-hover="dropdown" data-close-others="false">Timeline</a> 
-                          <!-- timelines -->
-                          <div class="dropdown-menu" role="menu" aria-labelledby="timeline-drop"> <a href="timeline.html" class="dropdown-item">Timeline Default</a> <a href="timeline-left.html" class="dropdown-item">Timeline Left</a> <a href="timeline-right.html" class="dropdown-item">Timeline Right</a> <a href="timeline-stacked.html" class="dropdown-item">Timeline Stacked</a> </div>
-                        </div>
+                        
                         <a href="customers.html" class="dropdown-item">Customers</a> <a href="features.html" class="dropdown-item">Features/Services</a> <a href="login.html" class="dropdown-item">Login</a> <a href="signup.html" class="dropdown-item">Sign Up</a> <a href="starter.html" class="dropdown-item">Starter Snippets</a> <a href="404.html" class="dropdown-item">404 Error</a> 
                       </div>
                     </li>
@@ -283,71 +269,6 @@
                       </div>
                     </li>
                     
-                    <!-- Mega menu example -->
-                    <li class="nav-item dropdown dropdown-persist dropdown-mega-menu dropdown-mega-menu-50">
-                      <a href="#" class="nav-link dropdown-toggle" id="megamenu-drop" data-toggle="dropdown" data-hover="dropdown">Mega Menu</a> 
-                      <!-- Dropdown Menu - Mega Menu -->
-                      <div class="dropdown-menu dropdown-menu-right">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-pills nav-pills-border-bottom-inside flex-column flex-lg-row" role="tablist">
-                          <li class="nav-item"> <a class="nav-link p-3 active text-center font-weight-bold" data-toggle="tab" data-target=".menu-tab-1" role="tab">Mega Menu Tab 1</a> </li>
-                          <li class="nav-item"> <a class="nav-link p-3 text-center font-weight-bold" data-toggle="tab" data-target=".menu-tab-2" role="tab">Mega Menu Tab 2</a> </li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content py-3">
-                          <div class="tab-pane active show menu-tab-1" role="tabpanel">
-                            <div class="row text-center">
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-tachometer-alt icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.1"></i> 
-                                <h5 class="mt-2">
-                                  Fully Optimized
-                                </h5>
-                                <p>Consectetuer ea esca huic letalis pagus quidne refero ut utrum.</p>
-                              </div>
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-wrench icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.2"></i> 
-                                <h5 class="mt-2">
-                                  Free Support
-                                </h5>
-                                <p>At causa consequat luptatum nulla oppeto pagus saepius tincidunt vulputate.</p>
-                              </div>
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-rocket icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.3"></i> 
-                                <h5 class="mt-2">
-                                  Free Upgrades
-                                </h5>
-                                <p>Exerci haero neque quidne refero scisco.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="tab-pane menu-tab-2" role="tabpanel">
-                            <div class="row text-center">
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-chart-line icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.4"></i> 
-                                <h5 class="mt-2">
-                                  99.9% Uptime
-                                </h5>
-                                <p>Commoveo consectetuer esca gilvus melior metuo neque persto si tego.</p>
-                              </div>
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-users icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.5"></i> 
-                                <h5 class="mt-2">
-                                  Multiuser
-                                </h5>
-                                <p>Commodo incassum nobis occuro pagus quia similis torqueo virtus.</p>
-                              </div>
-                              <div class="col-lg-4 py-2">
-                                <i class="fa fa-plug icon-5x text-primary" data-animate="fadeIn" data-animate-delay="0.6"></i> 
-                                <h5 class="mt-2">
-                                  Plug n play
-                                </h5>
-                                <p>Abbas decet illum inhibeo magna tincidunt.</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
                   </ul>
                 </div>
                 <!--/.navbar-collapse -->
@@ -358,6 +279,9 @@
       </div>
     </div>
 
+<!-- Sliding Photos -->
+
+<!-- Sliding Photos End -->
 
       
       <router-view></router-view>
@@ -395,7 +319,7 @@
               <h4 class="text-uppercase text-white">
                 About Us
               </h4>
-              <p>Designing apps to improve the patient experience</p>
+              <p>Designing web applications that improve the patient experience</p>
             </div>
             
           </div>
@@ -452,17 +376,13 @@
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>Welcome to MyCancerCoach!</h1>
+    <h1></h1>
 
   </div>
 </template>
 
-
-<template id="signup-page">
+  <template id="signup-page">
   <div class="vue-component">
-
-
-
     <!--@modal - signup modal-->
     <div class="container"
     <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -559,62 +479,7 @@
       </div>
     
     </div>
-
-
-    <!-- <div class="container">
-      <h1>Signup</h1>
-     
-      <div class="form-group">
-        <label>First Name:</label> 
-        <input type="text" class="form-control" v-model="firstName">
-      </div>
-      <div class="form-group">
-        <label>Last Name:</label>
-        <input type="text" class="form-control" v-model="lastName">
-      </div>
-
-      <div class="form-group">
-        <label>Date of Birth:</label>
-        <input type="text" class="form-control" v-model="dob">
-      </div>
-
-      <div class="form-group">
-        <label>Street Address:</label>
-        <input type="text" class="form-control" v-model="streetAddress">
-      </div>
-      <div class="form-group">
-        <label>City:</label>
-        <input type="text" class="form-control" v-model="city">
-      </div>
-      <div class="form-group">
-        <label>State:</label>
-        <input type="text" class="form-control" v-model="state">
-      </div>
-      <div class="form-group">
-        <label>Zip:</label>
-        <input type="text" class="form-control" v-model="zip">
-      </div>
-      <div class="form-group">
-        <label>Phone Number:</label>
-        <input type="text" class="form-control" v-model="phoneNumber">
-      </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="text" class="form-control" v-model="email">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="text" class="form-control" v-model="password">
-      </div>
-      <div class="form-group">
-        <label>Password Confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
- -->
   </div>
-
 </template>
 
 <!-- Login Template -->
@@ -664,31 +529,74 @@
     </div>
   </div>
 
-<!-- <template id="login-page">
-  <div class="vue-component">
-
-    <div class="container">
-      <h1>Login</h1>
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>Email Address:</label>
-        <input type="text" class="form-control" v-model="text">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
-    </div>
-
-  </div> -->
 <template id="view-profile-page">
 </template>
 
+  <div class="vue-component">
+    <!--@modal - signup modal-->
+    <div class="container">
+    <div class="modal fade" id="create-reminder-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">
+              Create A Reminder
+            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form action="create-reminder-page.html">
+              <hr />
+              
+              <h5>
+                Account Information
+              </h5>
+              <div class="form-group">
+                <label class="sr-only" for="create-reminder-time-increment">Time Increment</label>
+                <input type="text" 
+                v-model="time_increment"
+               class="form-control" id="create-reminder-time-increment" placeholder="time increment (e.g., 1, 20, 30)">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="create-reminder-increment-unit">Increment Unit</label>
+                <input type="text" 
+                v-model="increment_unit"
+                class="form-control" id="create-reminder-increment_unit" placeholder="Minutes, Days, Weeks, etc.">
+              </div>
+              
+              <div class="form-group">
+                <label class="sr-only" for="create-reminder-timerable_id">ID</label>
+                <input type="text" 
+                v-model="timerable_id"
+                class="form-control" id="create-reminder-timerable_id" placeholder="id">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="create-reminder-timerable_type">Type of Reminder (Medication or Provider)</label>
+                <input type="text" 
+                v-model="zip"
+                class="form-control" id="create-reminder-timerable_type" placeholder="Medication or ">
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" value="term" class="form-check-input">
+                  I agree with the Terms and Conditions. 
+                </label>
+              </div>
+              <hr />
+              <button class="btn btn-primary" type="submit">Sign up</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <small>Already signed up? <a href="login.html">Login here</a>.</small>
+          </div>
+        </div>
+       
+      </div>
+    
+    </div>
 
-<template id="create-reminder-page">
+
+<!-- <template id="create-reminder-page">
   <div class="vue=component">
 
     <div class="container">
@@ -719,7 +627,7 @@
     
   </div>
   
-</template>
+</template> -->
 
 
 
