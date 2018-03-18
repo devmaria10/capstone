@@ -4,7 +4,10 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: []
+      message: [],
+      errors: [],
+      email: "",
+      password: ""
     };
   },
   created: function() {},
@@ -98,7 +101,7 @@ var ViewProfilePage = {
   template: "#view-profile-page",
   data: function() {
     return {
-      user: {
+      // user: {
         id: "",
         first_name: "",
         last_name: "",
@@ -108,14 +111,28 @@ var ViewProfilePage = {
         state: "",
         zip: "",
         phone_number: "",
-        email: ""       
-      }
-    }
+        email: ""      
+      // }
+    };
   },
   created: function() {
-    axios.get("/users/" + this.$route.params.id )
+    axios.get("/view_profile" )
       .then(function(response) {
-        this.user = response.data;
+        console.log(response.data);
+        // this.user = response.data;
+        this.id = response.data.id;
+        this.first_name = response.data.first_name;
+        this.last_name = response.data.last_name;
+        this.dob = response.data.dob;
+        this.street_address = response.data.street_address;
+        this.city = response.data.city;
+        this.state = response.data.state;
+        this.zip = response.data.zip;
+        this.phone_number = response.data.phone_number;
+        this.email = response.data.email;
+        this.diagnosis = response.data.diagnosis;
+        this.providers = response.data.providers;
+        this.medications = response.data.medications;
       }.bind(this));
   }
 };
@@ -166,9 +183,9 @@ var router = new VueRouter({
   routes: [{ path: "/", component: HomePage },
     { path: "/signup", component: SignupPage },
     { path: "/login", component: LoginPage },
-    { path: "/users", component: ViewProfilePage },
-    { path: "/timers", component: CreateReminderPage }
-    // { path: "/logout", component: LogoutPage }    
+    { path: "/user", component: ViewProfilePage },
+    { path: "/timers", component: CreateReminderPage },
+    { path: "/logout", component: LogoutPage }    
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
@@ -177,11 +194,73 @@ var router = new VueRouter({
 
 var app = new Vue({
   el: "#vue-app",
-  router: router, 
+  router: router,
+  data: function() {
+    return {
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      dob: "",
+      streetAddress: "",
+      city: "",
+      state: "",
+      zip: "",
+      phoneNumber: "",
+      passwordConfirmation: "",
+      errors: []
+    };
+  },
   created: function() {
     var jwt = localStorage.getItem("jwt");
     if (jwt) {
       axios.defaults.headers.common["Authorization"] = jwt;
+    }
+  },
+  methods: {
+    loginSubmit: function() {
+      var params = {
+        auth: { email: this.email, password: this.password }
+      };
+      axios
+        .post("/user_token", params)
+        .then(function(response) {
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          router.push("/user");
+        })
+        .catch(
+          function(error) {
+            this.errors = ["Invalid email or password."];
+            this.email = "";
+            this.password = "";
+          }.bind(this)
+        );
+    },
+    signupSubmit: function() {
+      var params = {
+        first_name: this.firstName,
+        last_name: this.lastName,
+        dob: this.dob,
+        street_address: this.streetAddress,
+        city: this.city,
+        zip: this.zip,
+        phone_number: this.phoneNumber,
+        email: this.email,
+        password: this.password,
+        password_confirmation: this.passwordConfirmation
+      };
+      axios
+        .post("/users", params)
+        .then(function(response) {
+          router.push("/login");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+          }.bind(this)
+        );
     }
   }
 });
