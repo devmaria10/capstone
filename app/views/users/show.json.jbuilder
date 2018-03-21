@@ -11,4 +11,8 @@ json.email @user.email
 
 json.diagnosis @user.diagnosis
 json.providers @user.providers
-json.medications @user.medications
+json.user_medications do
+  json.array! @user.user_medications, partial: 'user_medications/user_medication', as: :user_medication
+end
+
+json.timers @user.medication_timers

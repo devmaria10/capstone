@@ -111,7 +111,11 @@ var ViewProfilePage = {
         state: "",
         zip: "",
         phone_number: "",
-        email: ""      
+        email: "",
+        diagnosis: [{}],
+        providers: [{}],
+        user_medications: [{}],
+        timers: [{}]    
       // }
     };
   },
@@ -132,16 +136,65 @@ var ViewProfilePage = {
         this.email = response.data.email;
         this.diagnosis = response.data.diagnosis;
         this.providers = response.data.providers;
-        this.medications = response.data.medications;
+        this.user_medications = response.data.user_medications;
+        this.timers = response.data.timers;
       }.bind(this));
   }
 };
 
-var CreateReminderPage = {
-  template: "#create-reminder-page",
+var UserMedicationsShowPage = {
+  template: "#user-medications-show-page",
   data: function() {
     return {
-      last_rang: "",
+      user_medication: {
+        id: "",
+        dosage: "",
+        user_id: "",
+        provider: {
+          name: "",
+          address: ""
+        },
+        medication: {
+          id: "",
+          name: ""
+        }
+      },
+      time_increment: "",
+      increment_unit: ""
+    };
+  },
+  created: function() {
+    axios.get("/user_medications/" + this.$route.params.id)
+    .then(function(response) {
+      this.user_medication = response.data;
+    }.bind(this));
+  },
+  methods: {
+    submitTimer: function() {
+      var params = {
+        time_increment: this.time_increment,
+        increment_unit: this.increment_unit,
+        timerable_id: this.user_medication.id,
+        timerable_type: "UserMedication"
+      };
+      axios
+        .post("/timers", params)
+        .then(function(response) {
+          router.push("/user");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+          }.bind(this)
+        );
+    }
+  }
+};
+
+var TimersNewPage = {
+  template: "#timers-new-page",
+  data: function() {
+    return {
       time_increment: "",
       increment_unit: "",
       timerable_id: "",
@@ -158,7 +211,7 @@ var CreateReminderPage = {
         timerable_type: this.timerable_type
       };
       axios
-        .post("/timers/" + 1, params)
+        .post("/timers/", params)
         .then(function(response) {
           router.push("/timers");
         })
@@ -184,7 +237,8 @@ var router = new VueRouter({
     { path: "/signup", component: SignupPage },
     { path: "/login", component: LoginPage },
     { path: "/user", component: ViewProfilePage },
-    { path: "/timers", component: CreateReminderPage },
+    { path: "/user_medications/:id", component: UserMedicationsShowPage},
+    { path: "/timers/new", component: TimersNewPage },
     { path: "/logout", component: LogoutPage }    
   ],
   scrollBehavior: function(to, from, savedPosition) {
@@ -264,4 +318,3 @@ var app = new Vue({
     }
   }
 });
-

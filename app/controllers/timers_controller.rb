@@ -8,16 +8,16 @@ class TimersController < ApplicationController
   def create
     timer = Timer.new(
                     last_rang: Time.now,
-                    time_increment: params[:time_increment].to_i,
+                    time_increment: params[:time_increment],
                     increment_unit: params[:increment_unit],
-                    timerable_id: params[:timerable_id].to_i,
+                    timerable_id: params[:timerable_id],
                     timerable_type: params[:timerable_type]              
     )
-    user = User.find params[:user_id]
 
     if timer.save
-
-      ReminderJob.set(wait: eval("#{timer.time_increment}.#{timer.increment_unit}")).perform_later(timer, user.phone_number, timer.timerable.name)
+      user = timer.timerable.user
+      text = "your medication"
+      ReminderJob.set(wait: eval("#{timer.time_increment}.#{timer.increment_unit}")).perform_later(timer, user.phone_number, text)
 
       render json: {message: 'Reminder created successfully'}, status: :created
     else 

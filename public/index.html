@@ -620,62 +620,6 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
 
 
 
-      <!--start reminder modal-->
-    <div class="container">
-      <div class="modal fade" id="create-reminder-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">
-                Create A Reminder
-              </h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <form action="create-reminder-page.html">
-                <hr />
-                
-                <h5>
-                  Account Information
-                </h5>
-                <div class="form-group">
-                  <label class="sr-only" for="create-reminder-time-increment">Time Increment</label>
-                  <input type="text" 
-                  v-model="time_increment"
-                 class="form-control" id="create-reminder-time-increment" placeholder="time increment (e.g., 1, 20, 30)">
-                </div>
-                <div class="form-group">
-                  <label class="sr-only" for="create-reminder-increment-unit">Increment Unit</label>
-                  <input type="text" 
-                  v-model="increment_unit"
-                  class="form-control" id="create-reminder-increment_unit" placeholder="Minutes, Days, Weeks, etc.">
-                </div>
-                
-                <div class="form-group">
-                  <label class="sr-only" for="create-reminder-timerable_id">ID</label>
-                  <input type="text" 
-                  v-model="timerable_id"
-                  class="form-control" id="create-reminder-timerable_id" placeholder="id">
-                </div>
-                <div class="form-group">
-                  <label class="sr-only" for="create-reminder-timerable_type">Type of Reminder</label>
-                  <input type="text" 
-                  v-model="zip"
-                  class="form-control" id="create-reminder-timerable_type" placeholder="Medication or ">
-                </div>
-                <hr />
-                <button class="btn btn-primary" type="submit">Create A Reminder</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-            </div>
-          </div>
-         
-        </div>
-      </div>
-    </div> <!-- end reminder modal -->
-
-
 
   </div> <!-- end #vue-app -->
 
@@ -709,24 +653,84 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
   </div>
 </template>
 
-
-
-
 <template id="view-profile-page">
   <div class="vue-component">
     <div class="container">
-    <h4>First Name: {{ first_name }}</h4>
-      <h4>Last Name: {{ last_name}}</h4>
-      <h4>Date of Birth: {{ dob }}</h4>
-      <h4>Street Address: {{ street_address }}</h4>
-      <h4>City: {{ city }}</h4>
-      <h4>State: {{ state }}</h4>
-      <h4>Zip Code: {{ zip }}</h4>
-      <h4>Phone Number: {{ phone_number }}</h4>
-      <h4>Email Address: {{ email }}</h4>
-      <h4>Diagnosis: {{ diagnosis }}</h4>
-      <h4>Providers: {{ providers }}</h4>
-      <h4>Medications: {{ medications }}</h4>
+      <div class="row">
+        <!-- <div class="col-md-4"> -->
+          <div class="card-body">
+            <div class="card-header card-title">
+              <h4>First Name: {{ first_name }}</h4>
+              <h4>Last Name: {{ last_name}}</h4>
+              <h4>Date of Birth: {{ dob }}</h4>
+              <h4>Street Address: {{ street_address }}</h4>
+              <h4>City: {{ city }}</h4>
+              <h4>State: {{ state }}</h4>
+              <h4>Zip Code: {{ zip }}</h4>
+              <h4>Phone Number: {{ phone_number }}</h4>
+              <h4>Email Address: {{ email }}</h4>
+            </div>
+          </div>
+
+            <div class="card-body">
+              <div class="card-header card-title">
+                <h4>Diagnosis:</h4>
+                  <div class="row">
+                    <div v-for="diag in diagnosis" class="col-md-4">
+                      <div class="card-body">
+                        <div class="card-header card-title">
+                          {{ diag.name }}
+                        </div>
+                        <div class="card-text">
+                          ICD 10 Code: {{ diag.icd_10_code }}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+      <h4>Provider:</h4>
+      <div class="row">
+        <div v-for="provider in providers" class="col-md-4">
+          <div class="card-body">
+            <div class="card-header card-title">
+              {{ provider.name }}
+            </div>
+            <div class="card-text">
+              Address: {{ provider.address }}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h4>Medications:</h4>
+      <div class="row">
+        <div v-for="user_medication in user_medications" class="col-md-4">
+          <a v-bind:href="'/#/user_medications/' + user_medication.id">
+            <div class="card-body">
+              <div class="card-header card-title">
+                Name: {{ user_medication.name }}
+              </div>
+              <div class="card-text">
+                Dosage: {{ user_medication.dosage }}
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+      <!-- <h4>Timers:</h4>
+      <div class="row">
+        <div v-for="timer in timers" class="col-md-4">
+            <div class="card-body">
+              <div class="card-text">
+                {{ timer.id }}
+              </div>
+            </div>
+        </div>
+      </div> -->
 
     </div>
   </div>
@@ -737,8 +741,51 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
     
     <!-- </div> -->
 
+<template id="user-medications-show-page">
+  <div class="vue-component">
+    <div class="container">
+      <h1>Medications</h1>
+      <div>
+          {{ user_medication.medication.name }}
+      </div>
+      <div>
+          {{ user_medication.dosage }}
+      </div>
+      <div>
+          {{ user_medication.provider.name}}
+      </div>
+      <div>
+          {{ user_medication.provider.address }}
+      </div>
 
-<!-- <template id="create-reminder-page">
+      <div>
+        <h1>Set Up a Reminder</h1>
+        <div class="btn btn-primary" v-on:click="submitTimer()">Set Reminder</div>
+        
+        <div class="input-group mb-3">
+          Increment: 
+          <input type="text" class="form-control" v-model="time_increment">
+        </div>
+
+        <div class="input-group mb-3">
+          Unit: 
+          <select list="unit-names" class="form-control" v-model="increment_unit">
+          <datalist id="unit-names">
+            <option>hour</option>
+            <option>minutes</option>
+            <option>seconds</option>
+          </datalist>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+  
+</template>
+
+
+<template id="timers-new-page">
   <div class="vue=component">
 
     <div class="container">
@@ -768,8 +815,7 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
     </div>
     
   </div>
-  
-</template> -->
+</template>
 
 
 
