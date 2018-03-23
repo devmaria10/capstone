@@ -11,7 +11,8 @@ class TimersController < ApplicationController
                     time_increment: params[:time_increment],
                     increment_unit: params[:increment_unit],
                     timerable_id: params[:timerable_id],
-                    timerable_type: params[:timerable_type]              
+                    timerable_type: params[:timerable_type],
+                    repeating: params[:repeating]              
     )
 
     if timer.save
@@ -38,6 +39,7 @@ class TimersController < ApplicationController
     @timer.increment_unit = params[:increment_unit] || timer.increment_unit
     @timer.timerable_id = params[:timerable_id] || timer.timerable_id
     @timer.timerable_type = params[:timerable_type] || timer.timerable_type
+    @timer.repeating = params[:repeating] || timer.repeating
 
     if @timer.save
       ReminderJob.set(wait: 1.minute).perform_later(timer)

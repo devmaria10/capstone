@@ -160,7 +160,8 @@ var UserMedicationsShowPage = {
         }
       },
       time_increment: "",
-      increment_unit: ""
+      increment_unit: "",
+      repeating: ""
     };
   },
   created: function() {
@@ -175,7 +176,8 @@ var UserMedicationsShowPage = {
         time_increment: this.time_increment,
         increment_unit: this.increment_unit,
         timerable_id: this.user_medication.id,
-        timerable_type: "UserMedication"
+        timerable_type: "UserMedication",
+        repeating: this.repeating
       };
       axios
         .post("/timers", params)
@@ -199,6 +201,7 @@ var TimersNewPage = {
       increment_unit: "",
       timerable_id: "",
       timerable_type: "",
+      repeating: "",
       errors: []
     };
   },
@@ -208,7 +211,8 @@ var TimersNewPage = {
         time_increment: this.time_increment,
         increment_unit: this.increment_unit,
         timerable_id: this.timerable_id,
-        timerable_type: this.timerable_type
+        timerable_type: this.timerable_type,
+        repeating: this.repeating
       };
       axios
         .post("/timers/", params)
@@ -238,7 +242,6 @@ var router = new VueRouter({
     { path: "/login", component: LoginPage },
     { path: "/user", component: ViewProfilePage },
     { path: "/user_medications/:id", component: UserMedicationsShowPage},
-    { path: "/timers/new", component: TimersNewPage },
     { path: "/logout", component: LogoutPage }    
   ],
   scrollBehavior: function(to, from, savedPosition) {
