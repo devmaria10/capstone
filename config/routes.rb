@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   patch '/diagnoses/:id' => 'diagnoses#update'
   delete '/diagnoses/:id' => 'diagnoses#destroy'
 
+  get '/notes' => 'notes#index'
+  post '/notes' => 'notes#create'
+
   get'/user_medications' => 'user_medications#index'
   post '/user_medications' => 'user_medications#create'
   get '/user_medications/:id' => 'user_medications#show'

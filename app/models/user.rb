@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   has_many :medications, through: :user_medications
   has_many :diagnosis, through: :user_medications
+
+  has_many :notes
   
   def timers
     provider_timers + medication_timers
