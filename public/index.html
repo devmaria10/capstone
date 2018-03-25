@@ -278,7 +278,7 @@
           <ul>
             <!-- SLIDE 1 -->
             <li class="slide overlay overlay-op-4 overlay-gradient" data-transition="fadethroughdark" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="assets/img/girl-with-mobile-phone.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-link="shop-list.html">
-              <img src="assets/img/girl-with-mobile-phone.jpg" data-lazyload="assets/img/girl-with-mobile-phone.jpg.jpg" alt="background image" data-bgposition="center top" data-bgfit="cover" data-bgparallax="off" class="rev-slidebg" data-no-retina />
+              <img src="assets/img/girl-with-mobile-phone.jpg" data-lazyload="assets/img/girl-with-mobile-phone.jpg" alt="background image" data-bgposition="center top" data-bgfit="cover" data-bgparallax="off" class="rev-slidebg" data-no-retina />
               <!-- SLIDE 1 Content-->
               <div class="slide-content container" style="z-index: 10;">
                 <!--elements within .slide-content are pushed below navbar on "behind"-->
@@ -722,28 +722,29 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
 
   
 
-          <div class="card-body"> 
-            <div class="card-header card-title">
-            <h3>My Notes</h3>
-              <ul id="notes">
-                  <li>
-                      <p class="no-notes">You don't have any notes.</p>
-                  </li>
-              </ul>
-              <h3>Add New Note</h3>
-              <div>
-                  <textarea v-model="note" id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
-              </div>
+          <div class="app"> 
+               <h3>Notes</h3>
+               <h4>Add a New Note</h4>
+               <div class="input-single">
+               <div>
+                   <textarea v-model="note" id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
+               </div>         
+               </div>
 
-              <button id="start-record-btn" title="Start Recording">Start Note</button>
-              <button id="pause-record-btn" title="Pause Recording">Pause/End Note</button>
-              <button id="save-note-btn" title="Save Note" v-on:click="saveNote()">Save Note</button>   
-              <p id="recording-instructions">Press the <strong>Start Note</strong> button and start speaking.  Press the <strong>Pause/End</strong> button when you are finished.</p>
-              
-              
-            </div>
-          </div>
-        </div>
+               <button id="start-record-btn" title="Start Recording">Start Recognition</button>
+               <button id="pause-record-btn" title="Pause Recording">Pause Recognition</button>
+               <button id="save-note-btn" title="Save Note" v-on:click="saveNote()">Save Note</button>   
+               <p id="recording-instructions">Press the <strong>Start Recognition</strong> button and start speaking.</p>
+               
+               <h4>Saved Notes</h4>
+               <ul id="notes">
+                   <li>
+                       <p class="no-notes">You don't have any notes.</p>
+                   </li>
+               </ul>
+ 
+           </div>
+ 
 
 
 
