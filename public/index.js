@@ -273,7 +273,7 @@ var ViewProfilePage = {
           // Reset variables and update UI.
           noteContent = '';
           renderNotes(getAllNotes());
-          noteTextarea.val('burger');
+          noteTextarea.val('');
           instructions.text('Note saved successfully.');
         }
             
