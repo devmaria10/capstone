@@ -606,10 +606,6 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
         </div>
       </div> <!-- signup modal end -->
 
-      <div id="testID">
-        Please work!  Please please please!
-      </div>
-
 
   </div> <!-- end #vue-app -->
 
@@ -728,9 +724,10 @@ data-frames='[{"from":"y:100px;rX:90deg;opacity:0;","speed":1500,"to":"o:1;","de
 
           <div class="app"> 
               <h3>Add New Note</h3>
-              <div class="input-single">
+              <div>
                   <textarea v-model="note" id="note-textarea" placeholder="Create a new note by typing or using voice recognition." rows="6"></textarea>
-              </div>         
+              </div>
+
               <button id="start-record-btn" title="Start Recording">Start Recognition</button>
               <button id="pause-record-btn" title="Pause Recording">Pause Recognition</button>
               <button id="save-note-btn" title="Save Note" v-on:click="saveNote()">Save Note</button>   

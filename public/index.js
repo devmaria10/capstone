@@ -216,6 +216,8 @@ var ViewProfilePage = {
         if(!mobileRepeatBug) {
           noteContent += transcript;
           noteTextarea.val(noteContent);
+
+          noteTextarea.get(0).dispatchEvent(new Event('input'));
         }
       };
 
@@ -271,7 +273,7 @@ var ViewProfilePage = {
           // Reset variables and update UI.
           noteContent = '';
           renderNotes(getAllNotes());
-          noteTextarea.val('');
+          noteTextarea.val('burger');
           instructions.text('Note saved successfully.');
         }
             
