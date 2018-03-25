@@ -8,7 +8,8 @@ class NotesController < ApplicationController
   def create
     note = Note.new(
                     date: Time.now,
-                    note: params[:note]           
+                    note: params[:note],
+                    user_id: params[:user_id]          
     )
 
     if note.save
