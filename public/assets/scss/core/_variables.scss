@@ -21,7 +21,7 @@ $as-theme-colours-extended-options: false !default; // Adds social branding to t
 
 // Predefined colours
 // -------------------------
-$skinGreen: #55A79A !default;
+$skinGreen: #4f81c5 !default;
 $skinRed: #BE3E1D !default;
 $skinPurple: #b771b0 !default;
 $skinPink: #CC164D !default;
@@ -63,7 +63,7 @@ $as-theme-colours: map-merge($as-theme-colours-default, $as-theme-colours);
 // override this & recompile to change colour globally
 $primary_colour: $skinGreen !default; //#377CA8;
 $primary_colour_light: lighten($primary_colour, 5%) !default;
-$primary_colour_dark: #4c968a !default;
+$primary_colour_dark: #4f81c5 !default;
 
 // Brand colours extended
 // -------------------------

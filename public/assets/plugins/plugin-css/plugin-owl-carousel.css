@@ -87,7 +87,7 @@
 .owl-nav div:hover {
   opacity: 100;
   text-decoration: none;
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 /* Styling Pagination*/
@@ -111,7 +111,7 @@
 .owl-dots .owl-dot.active span,
 .owl-dots .owl-dot:hover span {
   opacity: 100;
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 .owl-nav-over {

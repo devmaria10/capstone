@@ -18,11 +18,11 @@
 }
 
 .bootstrap-switch>div>span.bootstrap-switch-primary {
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 .bootstrap-switch.bootstrap-switch-focused {
-  border-color: #55A79A;
+  border-color: #4f81c5;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);

@@ -647,27 +647,27 @@
 }
 
 .divider-success.divider-diagonal:before {
-  border-left-color: #28a745;
+  border-left-color: #4f81c5;
 }
 
 .divider-success.divider-diagonal-r:before {
-  border-right-color: #28a745;
+  border-right-color: #4f81c5;
 }
 
 .divider-success.divider-arrow-b:before {
-  border-top-color: #28a745;
+  border-top-color: #4f81c5;
 }
 
 .divider-success.divider-arrow-t:before {
-  border-bottom-color: #28a745;
+  border-bottom-color: #4f81c5;
 }
 
 .divider-success.divider-arrow-l:before {
-  border-right-color: #28a745;
+  border-right-color: #4f81c5;
 }
 
 .divider-success.divider-arrow-r:before {
-  border-left-color: #28a745;
+  border-left-color: #4f81c5;
 }
 
 .divider-warning.divider-diagonal:before {
@@ -815,27 +815,27 @@
 }
 
 .divider-green.divider-diagonal:before {
-  border-left-color: #55A79A;
+  border-left-color: #4f81c5;
 }
 
 .divider-green.divider-diagonal-r:before {
-  border-right-color: #55A79A;
+  border-right-color: #4f81c5;
 }
 
 .divider-green.divider-arrow-b:before {
-  border-top-color: #55A79A;
+  border-top-color: #4f81c5;
 }
 
 .divider-green.divider-arrow-t:before {
-  border-bottom-color: #55A79A;
+  border-bottom-color: #4f81c5;
 }
 
 .divider-green.divider-arrow-l:before {
-  border-right-color: #55A79A;
+  border-right-color: #4f81c5;
 }
 
 .divider-green.divider-arrow-r:before {
-  border-left-color: #55A79A;
+  border-left-color: #4f81c5;
 }
 
 .divider-red.divider-diagonal:before {
@@ -3728,7 +3728,7 @@ a.op-10:hover {
 }
 
 .bg-op-10.bg-success {
-  background-color: #28a745 !important;
+  background-color: #4f81c5 !important;
 }
 
 .bg-op-10.bg-warning {
@@ -3756,7 +3756,7 @@ a.op-10:hover {
 }
 
 .bg-op-10.bg-green {
-  background-color: #55a79a !important;
+  background-color: #4f81c5 !important;
 }
 
 .bg-op-10.bg-red {
@@ -3858,7 +3858,7 @@ a.op-10:hover {
 }
 
 .border-op-10.border-success {
-  border-color: #28a745 !important;
+  border-color: #4f81c5 !important;
 }
 
 .border-op-10.border-warning {
@@ -3886,7 +3886,7 @@ a.op-10:hover {
 }
 
 .border-op-10.border-green {
-  border-color: #55a79a !important;
+  border-color: #4f81c5 !important;
 }
 
 .border-op-10.border-red {

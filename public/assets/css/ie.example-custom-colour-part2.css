@@ -5901,7 +5901,7 @@ hr.hr-info {
 }
 
 hr.hr-success {
-  border-top-color: #28a745 !important;
+  border-top-color: #4f81c5 !important;
 }
 
 hr.hr-warning {
@@ -5929,7 +5929,7 @@ hr.hr-white {
 }
 
 hr.hr-green {
-  border-top-color: #55A79A !important;
+  border-top-color: #4f81c5 !important;
 }
 
 hr.hr-red {
@@ -8110,18 +8110,18 @@ body.animates-pending *[data-animate].animated-done {
 
 .overlay.overlay-success:after,
 .overlay-hover-content.overlay-success:after {
-  background: #28a745;
+  background: #4f81c5;
 }
 
 .overlay.overlay-success.overlay-gradient:after,
 .overlay-hover-content.overlay-success.overlay-gradient:after {
-  background-image: linear-gradient(to bottom, transparent 0%, #28a745 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, #4f81c5 100%);
   background-repeat: repeat-x;
 }
 
 .overlay.overlay-success.overlay-gradient-flip:after,
 .overlay-hover-content.overlay-success.overlay-gradient-flip:after {
-  background-image: linear-gradient(to bottom, #28a745 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, #4f81c5 0%, transparent 100%);
   background-repeat: repeat-x;
 }
 
@@ -8411,18 +8411,18 @@ body.animates-pending *[data-animate].animated-done {
 
 .overlay.overlay-green:after,
 .overlay-hover-content.overlay-green:after {
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 .overlay.overlay-green.overlay-gradient:after,
 .overlay-hover-content.overlay-green.overlay-gradient:after {
-  background-image: linear-gradient(to bottom, transparent 0%, #55A79A 100%);
+  background-image: linear-gradient(to bottom, transparent 0%, #4f81c5 100%);
   background-repeat: repeat-x;
 }
 
 .overlay.overlay-green.overlay-gradient-flip:after,
 .overlay-hover-content.overlay-green.overlay-gradient-flip:after {
-  background-image: linear-gradient(to bottom, #55A79A 0%, transparent 100%);
+  background-image: linear-gradient(to bottom, #4f81c5 0%, transparent 100%);
   background-repeat: repeat-x;
 }
 
@@ -10228,16 +10228,16 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .list-timeline.list-timeline-success:before {
-  background: #28a745;
+  background: #4f81c5;
 }
 
 .list-timeline.list-timeline-success .list-timeline-item:before {
-  border-color: #28a745;
+  border-color: #4f81c5;
 }
 
 .list-timeline.list-timeline-success .list-timeline-item.active:before,
 .list-timeline.list-timeline-success .list-timeline-item.show:before {
-  background: #28a745;
+  background: #4f81c5;
 }
 
 .list-timeline.list-timeline-warning:before {
@@ -10319,16 +10319,16 @@ all and (min-device-pixel-ratio: 1.5) {
 }
 
 .list-timeline.list-timeline-green:before {
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 .list-timeline.list-timeline-green .list-timeline-item:before {
-  border-color: #55A79A;
+  border-color: #4f81c5;
 }
 
 .list-timeline.list-timeline-green .list-timeline-item.active:before,
 .list-timeline.list-timeline-green .list-timeline-item.show:before {
-  background: #55A79A;
+  background: #4f81c5;
 }
 
 .list-timeline.list-timeline-red:before {
@@ -11886,7 +11886,7 @@ a:hover.text-brand-whatsapp {
 }
 
 .theme-colours a.green {
-  background-color: #55A79A;
+  background-color: #4f81c5;
   border: 3px solid white;
 }
 
@@ -12918,19 +12918,19 @@ a:hover.text-brand-whatsapp {
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #4f81c5 !important;
 }
 
 .text-success {
-  color: #28a745 !important;
+  color: #4f81c5 !important;
 }
 
 .text-hover-success:hover {
-  color: #28a745 !important;
+  color: #4f81c5 !important;
 }
 
 .bg-hover-success:hover {
-  background-color: #28a745 !important;
+  background-color: #4f81c5 !important;
 }
 
 .bg-warning {
@@ -13030,19 +13030,19 @@ a:hover.text-brand-whatsapp {
 }
 
 .bg-green {
-  background-color: #55A79A !important;
+  background-color: #4f81c5 !important;
 }
 
 .text-green {
-  color: #55A79A !important;
+  color: #4f81c5 !important;
 }
 
 .text-hover-green:hover {
-  color: #55A79A !important;
+  color: #4f81c5 !important;
 }
 
 .bg-hover-green:hover {
-  background-color: #55A79A !important;
+  background-color: #4f81c5 !important;
 }
 
 .bg-red {
@@ -13576,7 +13576,7 @@ ul.list-sm li {
 
 .border-success {
   border: 1px solid transparent;
-  border-color: #28a745 !important;
+  border-color: #4f81c5 !important;
 }
 
 .border-warning {
@@ -13611,7 +13611,7 @@ ul.list-sm li {
 
 .border-green {
   border: 1px solid transparent;
-  border-color: #55A79A !important;
+  border-color: #4f81c5 !important;
 }
 
 .border-red {

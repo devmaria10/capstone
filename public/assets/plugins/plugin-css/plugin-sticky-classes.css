@@ -164,7 +164,7 @@ body .is-sticky .sticky-header-light.header .header-inner .header-divider:after 
 
 body .is-sticky .sticky-header-light.header .header-brand-text,
 body .is-sticky .sticky-header-light.header .header-brand-text h1 {
-  color: #55A79A;
+  color: #4f81c5;
 }
 
 body .is-sticky .sticky-header-light.header .header-brand-text-alt {
@@ -199,7 +199,7 @@ body .is-sticky .sticky-header-dark.header .header-slogan {
 }
 
 body .is-sticky .sticky-header-primary.header {
-  background-color: #55A79A;
+  background-color: #4f81c5;
   border-bottom: 1px solid #87c2b8;
   color: #d7d7d7;
 }
@@ -804,7 +804,7 @@ body .is-sticky .border-grey-dark.sticky-border-op-10 {
 }
 
 body .is-sticky .sticky-bg-primary {
-  background-color: #55A79A !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-primary.sticky-bg-op-1,
@@ -854,16 +854,16 @@ body .is-sticky .bg-primary.sticky-bg-op-9 {
 
 body .is-sticky .sticky-bg-primary.sticky-bg-op-10,
 body .is-sticky .bg-primary.sticky-bg-op-10 {
-  background-color: #55a79a !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-text-primary {
-  color: #55A79A !important;
+  color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-primary {
   border: 1px solid transparent;
-  border-color: #55A79A !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-primary.sticky-border-op-1,
@@ -913,7 +913,7 @@ body .is-sticky .border-primary.sticky-border-op-9 {
 
 body .is-sticky .sticky-border-primary.sticky-border-op-10,
 body .is-sticky .border-primary.sticky-border-op-10 {
-  border-color: #55a79a !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-primary-dark {
@@ -1080,7 +1080,7 @@ body .is-sticky .bg-primary-faded.sticky-bg-op-9 {
 
 body .is-sticky .sticky-bg-primary-faded.sticky-bg-op-10,
 body .is-sticky .bg-primary-faded.sticky-bg-op-10 {
-  background-color: #55a79a !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-text-primary-faded {
@@ -1139,7 +1139,7 @@ body .is-sticky .border-primary-faded.sticky-border-op-9 {
 
 body .is-sticky .sticky-border-primary-faded.sticky-border-op-10,
 body .is-sticky .border-primary-faded.sticky-border-op-10 {
-  border-color: #55a79a !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-info {
@@ -1256,7 +1256,7 @@ body .is-sticky .border-info.sticky-border-op-10 {
 }
 
 body .is-sticky .sticky-bg-success {
-  background-color: #28a745 !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-success.sticky-bg-op-1,
@@ -1306,16 +1306,16 @@ body .is-sticky .bg-success.sticky-bg-op-9 {
 
 body .is-sticky .sticky-bg-success.sticky-bg-op-10,
 body .is-sticky .bg-success.sticky-bg-op-10 {
-  background-color: #28a745 !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-text-success {
-  color: #28a745 !important;
+  color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-success {
   border: 1px solid transparent;
-  border-color: #28a745 !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-success.sticky-border-op-1,
@@ -1365,7 +1365,7 @@ body .is-sticky .border-success.sticky-border-op-9 {
 
 body .is-sticky .sticky-border-success.sticky-border-op-10,
 body .is-sticky .border-success.sticky-border-op-10 {
-  border-color: #28a745 !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-warning {
@@ -2047,7 +2047,7 @@ body .is-sticky .border-white.sticky-border-op-10 {
 }
 
 body .is-sticky .sticky-bg-green {
-  background-color: #55A79A !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-green.sticky-bg-op-1,
@@ -2097,16 +2097,16 @@ body .is-sticky .bg-green.sticky-bg-op-9 {
 
 body .is-sticky .sticky-bg-green.sticky-bg-op-10,
 body .is-sticky .bg-green.sticky-bg-op-10 {
-  background-color: #55a79a !important;
+  background-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-text-green {
-  color: #55A79A !important;
+  color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-green {
   border: 1px solid transparent;
-  border-color: #55A79A !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-border-green.sticky-border-op-1,
@@ -2156,7 +2156,7 @@ body .is-sticky .border-green.sticky-border-op-9 {
 
 body .is-sticky .sticky-border-green.sticky-border-op-10,
 body .is-sticky .border-green.sticky-border-op-10 {
-  border-color: #55a79a !important;
+  border-color: #4f81c5 !important;
 }
 
 body .is-sticky .sticky-bg-red {

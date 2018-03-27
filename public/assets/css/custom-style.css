@@ -60,6 +60,13 @@
   /* 5. Footer wrapper */
 }
 
+.medication-margin{
+  margin-right: 5px;
+}
+.checkbox-margin{
+  /*color:red;*/
+  margin-left: 10px;
+}
 /*
  * --------------------------------------------------
  * 2. Colours
